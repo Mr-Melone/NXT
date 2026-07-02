@@ -1,1 +1,68 @@
-
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number"
+    },
+    "sizes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "sku": {
+      "type": "string"
+    },
+    "stock_status": {
+      "type": "string",
+      "enum": [
+        "in_stock",
+        "low_stock",
+        "out_of_stock"
+      ],
+      "default": "in_stock"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "specs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "badge": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "price"
+  ]
+}
