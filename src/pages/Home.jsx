@@ -7,6 +7,7 @@ import ParticleField from '@/components/ParticleField';
 import SectionReveal from '@/components/SectionReveal';
 import ShinpadHologram from '@/components/ShinpadHologram';
 import { base44 } from '@/api/base44Client';
+import { getProductImages } from '@/config/productImages';
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -237,9 +238,9 @@ export default function Home() {
                     <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-pulse-blue/40" />
 
                     <div className="aspect-square bg-white/5 relative overflow-hidden">
-                      {product.images?.[0] ? (
+                      {getProductImages(product)[0] ? (
                         <img
-                          src={product.images[0]}
+                          src={getProductImages(product)[0]}
                           alt={product.name}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         />
