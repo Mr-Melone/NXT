@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Plus, Minus, ShoppingCart, Check, ChevronRight } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 import { useCart } from '@/lib/CartContext';
+import { getProductImages } from '@/config/productImages';
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -57,7 +58,7 @@ export default function ProductDetail() {
     );
   }
 
-  const images = product.images?.length > 0 ? product.images : [null];
+  const images = getProductImages(product).length > 0 ? getProductImages(product) : [null];
 
   return (
     <div className="bg-void-black min-h-screen pt-20">
