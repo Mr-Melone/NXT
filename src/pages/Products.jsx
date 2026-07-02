@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Filter } from 'lucide-react';
 import SectionReveal from '@/components/SectionReveal';
 import { base44 } from '@/api/base44Client';
+import { getProductImages } from '@/config/productImages';
 
 export default function Products() {
   const [products, setProducts] = useState([]);
@@ -72,9 +73,9 @@ export default function Products() {
 
                   {/* Image */}
                   <div className="relative aspect-[4/3] bg-white/5 overflow-hidden">
-                    {product.images?.[0] ? (
+                    {getProductImages(product)[0] ? (
                       <img
-                        src={product.images[0]}
+                        src={getProductImages(product)[0]}
                         alt={product.name}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                       />
